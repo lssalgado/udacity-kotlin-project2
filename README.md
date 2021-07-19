@@ -1,9 +1,17 @@
-# Purpose of this Folder
+# Asteroid Radar
 
-This folder should contain the scaffolded project files to get a student started on their project. This repo will be added to the Classroom for students to use, so please do not have any solutions in this folder.
+## How to setup your API Key
+Open `local.properties` located at project's root and add a variable named `NASA_API_KEY` with your key like so:
 
-## Note: Android Kotlin Gradle Update
-Use the updated Gradle version in the `~/gradle/wrapper/gradle-wrapper.properties` file:
-```
-distributionUrl = https\://services.gradle.org/distributions/gradle-6.1.1-all.zip
-```
+`NASA_API_KEY=THATSNOTAVALIDAPIKEY`
+
+After that all you need to do is build and run the project :)
+
+## Checklist
+
+- [x] Setup the NasaApi;
+- [x] Add support to non-versioned API Key;
+- [ ] Filter and show the image of the day;
+- [ ] Build the recycler view of the home fragment;
+- [ ] Setup a database;
+- [ ] Expand the checklist with all the items from Rubric.

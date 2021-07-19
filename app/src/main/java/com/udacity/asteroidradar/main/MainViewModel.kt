@@ -3,13 +3,14 @@ package com.udacity.asteroidradar.main
 import android.net.Network
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.udacity.asteroidradar.BuildConfig
 import com.udacity.asteroidradar.api.parseAsteroidsJsonResult
 import com.udacity.asteroidradar.network.NasaApi
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import timber.log.Timber
 
-const val KEY = ""
+const val KEY = BuildConfig.NASA_API_KEY
 
 class MainViewModel : ViewModel() {
 
