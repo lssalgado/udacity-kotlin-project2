@@ -18,13 +18,7 @@ class MainViewModel : ViewModel() {
         viewModelScope.launch {
 
             try {
-//                Timber.e("imageOfTheDay")
-//                val imageOfTheDay = NasaApi.retrofitService.getImageOfTheDay(KEY)
-//                Timber.e(imageOfTheDay.toString())
-                Timber.e("resultList")
-                val resultList = NasaApi.retrofitService.getAsteroids("2021-07-05", KEY)
-//                val resultList = NasaApi.retrofitService.getAsteroids("2021-07-12", "2021-07-15", KEY)
-                Timber.e(resultList)
+                val resultList = NasaApi.retrofitService.getAsteroids("2021-07-12", "2021-07-15", KEY)
                 val asteroidList = parseAsteroidsJsonResult(JSONObject(resultList))
                 asteroidList.forEach {
                     Timber.e(it.toString())
