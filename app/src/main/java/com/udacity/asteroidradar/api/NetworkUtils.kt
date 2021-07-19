@@ -2,6 +2,7 @@ package com.udacity.asteroidradar.api
 
 import com.udacity.asteroidradar.Asteroid
 import com.udacity.asteroidradar.Constants
+import com.udacity.asteroidradar.network.ImageOfTheDay
 import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
@@ -62,4 +63,17 @@ private fun getNextSevenDaysFormattedDates(): ArrayList<String> {
     }
 
     return formattedDateList
+}
+
+fun parseImageOfTheDay(jsonObject: JSONObject): ImageOfTheDay {
+    val copyright = jsonObject.getString(ImageOfTheDay.Keys.copyright)
+    val date = jsonObject.getString(ImageOfTheDay.Keys.date)
+    val explanation = jsonObject.getString(ImageOfTheDay.Keys.explanation)
+    val hdurl = jsonObject.getString(ImageOfTheDay.Keys.hdurl)
+    val media_type = jsonObject.getString(ImageOfTheDay.Keys.media_type)
+    val service_version = jsonObject.getString(ImageOfTheDay.Keys.service_version)
+    val title = jsonObject.getString(ImageOfTheDay.Keys.title)
+    val url = jsonObject.getString(ImageOfTheDay.Keys.url)
+
+    return ImageOfTheDay(copyright, date, explanation, hdurl, media_type, service_version, title, url)
 }
