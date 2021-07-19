@@ -9,9 +9,9 @@ After that all you need to do is build and run the project :)
 
 ## Checklist
 
-[x] Setup the NasaApi;
-[x] Add support to non-versioned API Key;
-[ ] Filter and show the image of the day;
-[ ] Build the recycler view of the home fragment;
-[ ] Setup a database;
-[ ] Expand the checklist with all the items from Rubric.
+- [x] Setup the NasaApi;
+- [x] Add support to non-versioned API Key;
+- [ ] Filter and show the image of the day;
+- [ ] Build the recycler view of the home fragment;
+- [ ] Setup a database;
+- [ ] Expand the checklist with all the items from Rubric.
