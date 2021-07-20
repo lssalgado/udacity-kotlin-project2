@@ -29,19 +29,15 @@ class MainViewModel(application: Application) : ViewModel() {
 
     init {
         viewModelScope.launch {
-
             try {
                 val imageResult = NasaApi.retrofitService.getPictureOfDay(KEY)
                 pictureOfDay_.value = pictureOfDayFromString(imageResult)
-                val resultList =
-                    NasaApi.retrofitService.getAsteroids("2021-07-12", "2021-07-15", KEY)
-                val asteroidList = parseAsteroidsJsonResult(JSONObject(resultList))
-                asteroidList.forEach {
-                    Timber.e(it.toString())
-                }
+                repository.refreshAsteroids()
             } catch (e: Exception) {
                 Timber.e(e)
             }
         }
     }
+
+    val asteroids = repository.asteroids
 }
