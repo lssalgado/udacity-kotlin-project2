@@ -14,7 +14,7 @@ interface NasaApiService {
     suspend fun getAsteroids(@Query("start_date") beginDate: String, @Query("end_date") endDate: String, @Query("api_key") key: String): String
 
     @GET("planetary/apod")
-    suspend fun getImageOfTheDay(@Query("api_key") key: String): String
+    suspend fun getPictureOfDay(@Query("api_key") key: String): String
 }
 
 object NasaApi {
