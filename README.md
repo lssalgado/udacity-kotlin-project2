@@ -11,7 +11,8 @@ After that all you need to do is build and run the project :)
 
 - [x] Setup the NasaApi;
 - [x] Add support to non-versioned API Key;
-- [ ] Filter and show the image of the day;
+- [x] Filter and show the image of the day;
+- [x] Use `PictureOfDay` instead of `ImageOfTheDay`;
 - [ ] Build the recycler view of the home fragment;
 - [ ] Setup a database;
 - [ ] Expand the checklist with all the items from Rubric.
