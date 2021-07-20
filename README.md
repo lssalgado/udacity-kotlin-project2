@@ -14,5 +14,6 @@ After that all you need to do is build and run the project :)
 - [x] Filter and show the image of the day;
 - [x] Use `PictureOfDay` instead of `ImageOfTheDay`;
 - [ ] Build the recycler view of the home fragment;
-- [ ] Setup a database;
+- [x] Setup a database;
+- [ ] Fix WHERE to use dynamic date;
 - [ ] Expand the checklist with all the items from Rubric.
