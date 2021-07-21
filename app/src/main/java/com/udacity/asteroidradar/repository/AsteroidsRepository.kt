@@ -3,6 +3,7 @@ package com.udacity.asteroidradar.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.udacity.asteroidradar.Asteroid
+import com.udacity.asteroidradar.api.getTodayDate
 import com.udacity.asteroidradar.api.parseAsteroidsJsonResult
 import com.udacity.asteroidradar.asDatabaseModel
 import com.udacity.asteroidradar.database.AsteroidsDatabase
@@ -21,7 +22,7 @@ class AsteroidsRepository(private val database: AsteroidsDatabase) {
 
     suspend fun refreshAsteroids() {
         withContext(Dispatchers.IO) {
-            val response = NasaApi.retrofitService.getAsteroids("2021-07-12", "2021-07-15", KEY)
+            val response = NasaApi.retrofitService.getAsteroids(getTodayDate(), KEY)
             val asteroidList = parseAsteroidsJsonResult(JSONObject(response))
             database.asteroidDao.insertAll(*asteroidList.asDatabaseModel())
         }
