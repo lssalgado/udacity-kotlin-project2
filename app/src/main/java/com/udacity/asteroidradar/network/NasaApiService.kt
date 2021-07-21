@@ -1,11 +1,10 @@
 package com.udacity.asteroidradar.network
 
+import com.udacity.asteroidradar.Constants.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
-
-private const val BASE_URL = "https://api.nasa.gov/"
 
 private val retrofit = Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(ScalarsConverterFactory.create()).build()
 
