@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
-class App: Application() {
+class App : Application() {
 
     val applicationScope = CoroutineScope(Dispatchers.Default)
 
@@ -41,7 +41,14 @@ class App: Application() {
             }
             .build()
 
-        val repeatingRequest = PeriodicWorkRequestBuilder<UpdateAsteroidsWork>(1, TimeUnit.DAYS).setConstraints(constraints).build()
-        WorkManager.getInstance().enqueueUniquePeriodicWork(UpdateAsteroidsWork.UPDATE, ExistingPeriodicWorkPolicy.KEEP, repeatingRequest)
+        val repeatingRequest =
+            PeriodicWorkRequestBuilder<UpdateAsteroidsWork>(1, TimeUnit.DAYS)
+                .setConstraints(constraints).build()
+
+        WorkManager.getInstance().enqueueUniquePeriodicWork(
+            UpdateAsteroidsWork.NAME,
+            ExistingPeriodicWorkPolicy.KEEP,
+            repeatingRequest
+        )
     }
 }
