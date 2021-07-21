@@ -16,15 +16,25 @@ import org.json.JSONObject
 
 class AsteroidsRepository(private val database: AsteroidsDatabase) {
 
-    val asteroids: LiveData<List<Asteroid>> = Transformations.map(database.asteroidDao.getAsteroids()) {
+    private val todayDate = getTodayDate()
+
+    val asteroids: LiveData<List<Asteroid>> = Transformations.map(
+        database.asteroidDao.getAsteroidsOfDay(todayDate)
+    ) {
         it.asDomainModel()
     }
 
     suspend fun refreshAsteroids() {
         withContext(Dispatchers.IO) {
-            val response = NasaApi.retrofitService.getAsteroids(getTodayDate(), KEY)
+            val response = NasaApi.retrofitService.getAsteroids(todayDate, KEY)
             val asteroidList = parseAsteroidsJsonResult(JSONObject(response))
             database.asteroidDao.insertAll(*asteroidList.asDatabaseModel())
+        }
+    }
+
+    suspend fun deleteOldAsteroids() {
+        withContext(Dispatchers.IO) {
+            database.asteroidDao.deleteOldAsteroids(todayDate)
         }
     }
 }
