@@ -12,8 +12,7 @@ class UpdateAsteroidsWork(appContext: Context, params: WorkerParameters) :
     CoroutineWorker(appContext, params) {
 
     companion object {
-        val UPDATE = "RefreshDataWork"
-        val DELETE = "RefreshDataWork"
+        val NAME = "RefreshAsteroidsWork"
     }
 
     override suspend fun doWork(): Result {
@@ -21,11 +20,12 @@ class UpdateAsteroidsWork(appContext: Context, params: WorkerParameters) :
         val repository = AsteroidsRepository(database)
 
         return try {
+            repository.deleteOldAsteroids()
             repository.refreshAsteroids()
             Timber.e("Successfully refreshed asteroids!!")
             Result.success()
         } catch (e: HttpException) {
-            Timber.e("Could not refreshed asteroids!!")
+            Timber.e("Could not refresh asteroids!!")
             Timber.e(e)
             Result.retry()
         }
