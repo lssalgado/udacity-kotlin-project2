@@ -50,7 +50,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:src="@drawable/ic_status_potentially_hazardous"
-            app:asteroidStatusImage="@{asteroid.potentiallyHazardous}"/>
+            app:statusIcon="@{asteroid.potentiallyHazardous}"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
