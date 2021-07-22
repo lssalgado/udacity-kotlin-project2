@@ -43,4 +43,12 @@ class MainViewModel(application: Application) : ViewModel() {
     }
 
     val asteroids = repository.asteroids
+
+    fun onAsteroidClicked(id: Long) {
+        _navigateToAsteroidDetails.value = asteroids.value?.find { it.id == id }
+    }
+
+    fun onAsteroidDetailsNavigated() {
+        _navigateToAsteroidDetails.value = null
+    }
 }
