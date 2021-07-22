@@ -13,7 +13,7 @@ After that all you need to do is build and run the project :)
 - [x] Add support to non-versioned API Key;
 - [x] Filter and show the image of the day;
 - [x] Use `PictureOfDay` instead of `ImageOfTheDay`;
-- [ ] Build the recycler view of the home fragment;
+- [x] Build the recycler view of the home fragment;
 - [x] Setup a database;
 - [x] Fix WHERE to use dynamic date;
 - [x] The app can save the downloaded asteroids in the database and then display them also from the database;
@@ -28,5 +28,5 @@ After that all you need to do is build and run the project :)
 - [ ] Provide styles for the details screen subtitles and values to make it consistent, and make it look like in the designs;
 - [ ] Make sure the entire app works without an internet connection;
 - [ ] Improve try/catch in MainViewModel;
-- [ ] Test Workers;
+- [x] Test Workers;
 - [ ] Expand the checklist with all the items from Rubric.
