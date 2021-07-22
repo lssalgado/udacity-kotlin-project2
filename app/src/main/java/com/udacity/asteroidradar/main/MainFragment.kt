@@ -30,7 +30,7 @@ class MainFragment : Fragment() {
         binding.viewModel = viewModel
 
         val clickCallback = MainAdapter.ClickCallback {
-
+            viewModel.onAsteroidClicked(it)
         }
         val adapter = MainAdapter(clickCallback)
 
