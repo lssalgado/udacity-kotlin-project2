@@ -7,6 +7,9 @@
         <variable
             name="asteroid"
             type="com.udacity.asteroidradar.Asteroid" />
+        <variable
+            name="clickCallback"
+            type="com.udacity.asteroidradar.main.adapter.MainAdapter.ClickCallback" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,6 +19,7 @@
         android:layout_marginStart="@dimen/normal_margin"
         android:layout_marginTop="@dimen/small_margin"
         android:layout_width="match_parent"
+        android:onClick="@{() -> clickCallback.onClick(asteroid)}"
         >
 
         <TextView
