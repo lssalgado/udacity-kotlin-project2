@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.udacity.asteroidradar.R
 import com.udacity.asteroidradar.databinding.FragmentMainBinding
+import com.udacity.asteroidradar.main.adapter.MainAdapter
 import timber.log.Timber
 
 class MainFragment : Fragment() {
@@ -28,7 +29,14 @@ class MainFragment : Fragment() {
 
         binding.viewModel = viewModel
 
+        val clickCallback = MainAdapter.ClickCallback {
+
+        }
+        val adapter = MainAdapter(clickCallback)
+
+        binding.asteroidRecycler.adapter = adapter
         viewModel.asteroids.observe(viewLifecycleOwner, Observer { asteroidList ->
+            adapter.submitList(asteroidList)
             asteroidList.forEach {
                 Timber.e(it.toString())
             }
