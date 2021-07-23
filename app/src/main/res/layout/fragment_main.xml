@@ -27,7 +27,8 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                app:pictureOfDayUrl="@{viewModel.pictureOfDay}"/>
+                app:pictureOfDayUrl="@{viewModel.pictureOfDay}"
+                android:contentDescription="@{viewModel.pictureOfDay.title}" />
 
             <TextView
                 android:id="@+id/textView"
@@ -63,6 +64,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/loading"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

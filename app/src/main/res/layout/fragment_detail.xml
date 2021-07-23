@@ -24,7 +24,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/asteroid_safe" />
+            tools:srcCompat="@drawable/asteroid_safe"
+            android:contentDescription="@{asteroid.getContentDescription(context)}"/>
 
         <ScrollView
             android:layout_width="0dp"
@@ -45,6 +46,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:labelFor="@id/close_approach_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/close_approach_data_title"
@@ -74,6 +76,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:labelFor="@id/absolute_magnitude"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/absolute_magnitude_title"
@@ -94,11 +97,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="16dp"
-                        app:srcCompat="@drawable/ic_help_circle" />
+                        app:srcCompat="@drawable/ic_help_circle"
+                        android:contentDescription="@string/au_meaning"/>
 
                 </LinearLayout>
 
                 <TextView
+                    android:labelFor="@id/estimated_diameter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -115,6 +120,7 @@
                     tools:text="0.82 km" />
 
                 <TextView
+                    android:labelFor="@id/relative_velocity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -131,6 +137,7 @@
                     tools:text="11.9 km/s" />
 
                 <TextView
+                    android:labelFor="@id/distance_from_earth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
