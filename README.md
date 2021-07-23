@@ -20,7 +20,7 @@ After that all you need to do is build and run the project :)
 - [x] The app filters asteroids from the past;
 - [x] The app downloads the next 7 days asteroids and saves them in the database once a day using workManager with requirements of internet connection and device plugged in. The app can display saved asteroids from the database even if internet connection is not available;
 - [ ] The app works correctly in talk back mode, it provides descriptions for all the texts and images: Asteroid images in details screen and image of the day. It also provides description for the details screen help button;
-- [ ] The app displays a list of asteroids in the Main Screen by using a RecyclerView, when tapping an item the app opens Details screen;
+- [x] The app displays a list of asteroids in the Main Screen by using a RecyclerView, when tapping an item the app opens Details screen;
 - [ ] Modify the app to support multiple languages, device sizes and orientations;
 - [x] The asteroids displayed in the screens are downloaded from the NASA API;
 - [x] The NASA image of the day is displayed in the Main Screen;

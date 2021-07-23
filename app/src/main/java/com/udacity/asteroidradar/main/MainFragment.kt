@@ -5,6 +5,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.udacity.asteroidradar.R
 import com.udacity.asteroidradar.databinding.FragmentMainBinding
 import com.udacity.asteroidradar.main.adapter.MainAdapter
@@ -30,7 +31,7 @@ class MainFragment : Fragment() {
         binding.viewModel = viewModel
 
         val clickCallback = MainAdapter.ClickCallback {
-
+            viewModel.onAsteroidClicked(it)
         }
         val adapter = MainAdapter(clickCallback)
 
@@ -39,6 +40,13 @@ class MainFragment : Fragment() {
             adapter.submitList(asteroidList)
             asteroidList.forEach {
                 Timber.e(it.toString())
+            }
+        })
+
+        viewModel.navigateToAsteroidDetails.observe(viewLifecycleOwner, Observer { asteroid ->
+            asteroid?.let {
+                findNavController().navigate(MainFragmentDirections.actionShowDetail(it))
+                viewModel.onAsteroidDetailsNavigated()
             }
         })
 

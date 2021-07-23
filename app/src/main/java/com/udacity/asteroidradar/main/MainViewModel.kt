@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.udacity.asteroidradar.Asteroid
 import com.udacity.asteroidradar.BuildConfig
 import com.udacity.asteroidradar.PictureOfDay
 import com.udacity.asteroidradar.database.getDatabase
@@ -25,6 +26,10 @@ class MainViewModel(application: Application) : ViewModel() {
     val pictureOfDay: LiveData<PictureOfDay>
         get() = pictureOfDay_
 
+    private val _navigateToAsteroidDetails = MutableLiveData<Asteroid>()
+    val navigateToAsteroidDetails
+        get() = _navigateToAsteroidDetails
+
     init {
         viewModelScope.launch {
             try {
@@ -38,4 +43,12 @@ class MainViewModel(application: Application) : ViewModel() {
     }
 
     val asteroids = repository.asteroids
+
+    fun onAsteroidClicked(id: Long) {
+        _navigateToAsteroidDetails.value = asteroids.value?.find { it.id == id }
+    }
+
+    fun onAsteroidDetailsNavigated() {
+        _navigateToAsteroidDetails.value = null
+    }
 }
