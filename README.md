@@ -29,4 +29,5 @@ After that all you need to do is build and run the project :)
 - [ ] Make sure the entire app works without an internet connection;
 - [ ] Improve try/catch in MainViewModel;
 - [x] Test Workers;
+- [ ] Support Right to Left languages;
 - [ ] Expand the checklist with all the items from Rubric.
