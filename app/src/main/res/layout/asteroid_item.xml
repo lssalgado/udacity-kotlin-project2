@@ -21,10 +21,12 @@
         android:layout_marginTop="@dimen/small_margin"
         android:layout_marginEnd="@dimen/normal_margin"
         android:layout_marginBottom="@dimen/small_margin"
-        android:onClick="@{() -> clickCallback.onClick(asteroid)}">
+        android:onClick="@{() -> clickCallback.onClick(asteroid)}"
+        tools:background="@color/colorPrimaryDark">
 
         <TextView
             android:id="@+id/codename"
+            style="@style/asteroid_item_accent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/asteroid_codename"
@@ -32,10 +34,12 @@
             app:layout_constraintBottom_toTopOf="@id/date"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="@dimen/tiny_margin"
             tools:text="285571 (2000 PQ9)" />
 
         <TextView
             android:id="@+id/date"
+            style="@style/asteroid_item.gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/asteroid_close_approach_date"
