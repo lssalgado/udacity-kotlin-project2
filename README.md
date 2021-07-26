@@ -30,7 +30,7 @@ After that all you need to do is build and run the project :)
 - [x] Make the app delete asteroids before today once a day from the same workManager that downloads the asteroids;
 - [x] Provide styles for the details screen subtitles and values to make it consistent, and make it look like in the designs;
 - [x] Make sure the entire app works without an internet connection;
-- [ ] Improve try/catch in MainViewModel;
+- [x] Improve try/catch in MainViewModel;
 - [x] Test Workers;
-- [ ] Support Right to Left languages;
+- [x] Support Right to Left languages;
 - [ ] Expand the checklist with all the items from Rubric.
