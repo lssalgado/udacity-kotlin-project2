@@ -38,9 +38,6 @@ class MainFragment : Fragment() {
         binding.asteroidRecycler.adapter = adapter
         viewModel.asteroids.observe(viewLifecycleOwner, Observer { asteroidList ->
             adapter.submitList(asteroidList)
-            asteroidList.forEach {
-                Timber.e(it.toString())
-            }
         })
 
         viewModel.navigateToAsteroidDetails.observe(viewLifecycleOwner, Observer { asteroid ->
