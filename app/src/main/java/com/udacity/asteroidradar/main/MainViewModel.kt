@@ -37,6 +37,7 @@ class MainViewModel(application: Application) : ViewModel() {
                 pictureOfDay_.value = pictureOfDayFromString(imageResult)
                 repository.refreshAsteroids()
             } catch (e: Exception) {
+                Timber.e("Could not fetch the Image of Day from NASA API!!")
                 Timber.e(e)
             }
         }

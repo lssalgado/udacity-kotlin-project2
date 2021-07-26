@@ -38,9 +38,6 @@ class MainFragment : Fragment() {
         binding.asteroidRecycler.adapter = adapter
         viewModel.asteroids.observe(viewLifecycleOwner, Observer { asteroidList ->
             adapter.submitList(asteroidList)
-            asteroidList.forEach {
-                Timber.e(it.toString())
-            }
         })
 
         viewModel.navigateToAsteroidDetails.observe(viewLifecycleOwner, Observer { asteroid ->
@@ -53,14 +50,5 @@ class MainFragment : Fragment() {
         setHasOptionsMenu(true)
 
         return binding.root
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_overflow_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return true
     }
 }
