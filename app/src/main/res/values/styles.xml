@@ -21,4 +21,13 @@
     <style name="asteroid_item.gray">
         <item name="android:textColor">@color/text_grey</item>
     </style>
+
+<!--  Based on Rob's Answer https://stackoverflow.com/a/54751236  -->
+    <style name="AlertDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="buttonBarPositiveButtonStyle">@style/Alert.Button</item>
+    </style>
+
+    <style name="Alert.Button" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
 </resources>
