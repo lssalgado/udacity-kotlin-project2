@@ -15,14 +15,17 @@
         android:layout_height="match_parent"
         android:background="@color/app_background">
 
+        <!--I tried moving the image into a header of the scrollview but it felt better to
+            leave the image fixed at the top with a height relative to the screen size-->
+
         <FrameLayout
             android:id="@+id/activity_main_image_of_the_day_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHeight_percent="0.3">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/activity_main_image_of_the_day"
